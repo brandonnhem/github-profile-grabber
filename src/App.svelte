@@ -1,4 +1,6 @@
 <script>
+import SearchBar from "./components/SearchBar.svelte";
+
 </script>
 
 <header>
@@ -17,8 +19,7 @@
 </header>
 
 <main>
-	Search GitHub username...
-	Search
+	<SearchBar />
 
 	Joined
 
