@@ -34,3 +34,7 @@ body {
     background-color: hsl(227, 100%, 98%);
     padding: 2rem 1rem;
 }
+
+button, input {
+    font-family: 'Space Mono', monospace;
+}
