@@ -1,6 +1,6 @@
 <script>
-import SearchBar from "./components/SearchBar.svelte";
-
+import SearchBar from './components/SearchBar.svelte';
+import Result from './components/result/Result.svelte';
 </script>
 
 <header>
@@ -20,12 +20,7 @@ import SearchBar from "./components/SearchBar.svelte";
 
 <main>
 	<SearchBar />
-
-	Joined
-
-	Repos
-	Followers
-	Following
+	<Result />
 </main>
 
 <style>
