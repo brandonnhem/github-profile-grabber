@@ -44,4 +44,22 @@
     p, h3 {
         margin: 0;
     }
+
+    @media only screen and (min-width: 768px) {
+        p {
+            font-size: 13px;
+        }
+
+        h3 {
+            font-size: 22px;
+        }
+
+        .stats {
+            justify-content: space-around;
+        }
+
+        .stats-col {
+            align-items: flex-start;
+        }
+    }
 </style>
