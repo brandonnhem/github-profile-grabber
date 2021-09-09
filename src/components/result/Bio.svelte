@@ -50,4 +50,20 @@
         color: hsl(212, 100%, 50%);
         text-decoration: none;
     }
+
+    @media only screen and (min-width: 768px) {
+        img {
+            height: 117px;
+            width: 117px;
+        }
+
+        h3 {
+            font-size: 26px;
+            margin-bottom: 1vh;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+    }
 </style>
