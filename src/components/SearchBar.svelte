@@ -47,4 +47,21 @@
     input:focus {
         outline: none;
     }
+
+    @media only screen and (min-width: 768px) {
+        .search-bar {
+            justify-content: space-between;
+            padding-right: 1.5vw;
+        }
+
+        button {
+            font-size: 16px;
+            width: 106px;
+            height: 50px;
+        }
+
+        input {
+            font-size: 20px;
+        }
+    }
 </style>
