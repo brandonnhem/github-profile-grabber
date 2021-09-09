@@ -64,4 +64,10 @@
             font-size: 20px;
         }
     }
+
+    @media only screen and (min-width: 1440px) {
+        input {
+            width: 35vw;
+        }
+    }
 </style>
