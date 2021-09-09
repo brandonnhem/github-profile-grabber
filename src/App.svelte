@@ -42,11 +42,13 @@ import Result from './components/result/Result.svelte';
 		display: none;
 	}
 
-	#moon-svg {
+	#moon-svg, #sun-svg {
 		margin-left: 4vw;
 	}
 
-	#sun-svg {
-		margin-left: 4vw;
+	@media only screen and (min-width: 1440px) {
+		#moon-svg, #sun-svg {
+			margin-left: 1vw;
+		}
 	}
 </style>
