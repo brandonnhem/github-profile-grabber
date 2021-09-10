@@ -77,4 +77,14 @@
                 "website company"; 
         }
     }
+    
+    @media only screen and (min-width: 1440px) {
+        .links {
+            margin-left: 11vw;
+        }
+
+        .svg-wrapper {
+            width: 2vw;
+        }
+    }
 </style>

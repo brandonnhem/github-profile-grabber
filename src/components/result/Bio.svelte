@@ -4,9 +4,9 @@
             <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="profile">
         </div>
         <div class="profile-info">
-            <h3>USERNAME</h3>
-            <h4><a href="/">@HANDLE</a></h4>
-            <h4>Joined 9 Sep 2021</h4>
+            <h3 id="username">USERNAME</h3>
+            <h4 id="handle"><a href="/">@HANDLE</a></h4>
+            <h4 id="date">Joined 9 Sep 2021</h4>
         </div>
     </div>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, facere magni maiores totam, ea repellat eveniet, corrupti tempora.</p>
@@ -64,6 +64,36 @@
 
         h4 {
             font-size: 16px;
+        }
+    }
+    
+    @media only screen and (min-width: 1440px) {
+        .profile-info {
+            position: relative;
+        }
+
+        #username {
+            position: absolute;
+            top: -5vh;
+            left: -2vw;
+        }
+
+        #handle {
+            position: absolute;
+            top: -1vh;
+            left: -2vw;
+        }
+
+        #date {
+            position: absolute;
+            top: -5vh;
+            left: 20vw;
+            width: max-content;
+        }
+
+        p {
+            margin-left: 11vw;
+            margin-top: -2vw;
         }
     }
 </style>

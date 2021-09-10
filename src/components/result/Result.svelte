@@ -44,4 +44,10 @@
             padding: 3rem;
         }
     }
+
+    @media only screen and (min-width: 1440px) {
+        .result {
+            padding: 2rem 4rem;
+        }
+    }
 </style>
