@@ -47,6 +47,7 @@
         width: 50vw;
         margin-left: 1vw;
         caret-color: hsl(212, 100%, 50%);
+        cursor: pointer;
     }
 
     input:focus {
