@@ -96,4 +96,14 @@
             margin-top: -2vw;
         }
     }
+
+    @media (prefers-color-scheme: dark) {
+        :global(body:not(.light)) h4, p {
+            color: hsl(0, 0%, 100%);
+        }
+
+        :global(body:not(.dark)) p {
+            color:hsl(217, 35%, 45%);
+        }
+    }
 </style>

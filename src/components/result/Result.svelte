@@ -50,4 +50,13 @@
             padding: 2rem 4rem;
         }
     }
+
+    @media (prefers-color-scheme: dark) {
+        :global(body:not(.light)) .result {
+            background-color: hsl(222, 41%, 20%);
+            -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0);
+            -moz-box-shadow: 0 0 0 0 rgba(0,0,0,0);
+            box-shadow: 0 0 0 0 rgba(0,0,0,0);
+        }
+    }
 </style>
