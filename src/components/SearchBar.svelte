@@ -34,6 +34,7 @@
         width: 84px;
         border: none;
         font-weight: 700;
+        cursor: pointer;
     }
 
     input {
