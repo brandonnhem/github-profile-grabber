@@ -7,7 +7,7 @@
 </form>
 
 <style>
-    .search-bar{
+    .search-bar {
         background-color: white;
         border-radius: 15px;
         height: 60px;
@@ -67,6 +67,24 @@
     @media only screen and (min-width: 1440px) {
         input {
             width: 35vw;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :global(body:not(.light)) .search-bar {
+            background-color: hsl(222, 41%, 20%);
+            -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0);
+            -moz-box-shadow: 0 0 0 0 rgba(0,0,0,0);
+            box-shadow: 0 0 0 0 rgba(0,0,0,0);
+        }
+
+        :global(body:not(.light)) input {
+            background-color: hsl(222, 41%, 20%);
+            color: hsl(0, 0%, 100%);
+        }
+
+        :global(body:not(.light)) ::placeholder {
+            color: hsl(0, 0%, 100%);
         }
     }
 </style>
