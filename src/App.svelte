@@ -82,6 +82,14 @@
 		cursor: pointer;
 	}
 
+	.theme:hover h3 {
+		color: hsl(0, 0%, 0%);
+	}
+
+	.theme:hover path {
+		fill: hsl(0, 0%, 0%);
+	}
+
 	#light-theme-toggle {
 		display: flex;
 		flex-direction: row;
@@ -97,6 +105,14 @@
 
 	#moon-svg, #sun-svg {
 		margin-left: 4vw;
+	}
+
+	h3 {
+		color: hsl(217, 35%, 45%);
+	}
+
+	path {
+		fill: hsl(217, 35%, 45%);
 	}
 
 	@media only screen and (min-width: 1440px) {
@@ -117,6 +133,22 @@
 
 		:global(body:not(.light)) #dark-theme-toggle {
 			display: flex;
+		}
+
+		:global(body:not(.light)) h3 {
+			color: hsl(0, 0%, 100%);
+		}
+
+		:global(body:not(.light)) path {
+			fill: hsl(0, 0%, 100%);
+		}
+
+		:global(body:not(.light)) .theme:hover h3 {
+			color: hsl(217, 35%, 45%);
+		}
+
+		:global(body:not(.light)) .theme:hover path {
+			fill: hsl(217, 35%, 45%);
 		}
 	}
 </style>
