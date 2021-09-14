@@ -97,6 +97,16 @@
         }
     }
 
+    @media only screen and (min-width: 1600px) {
+        #username, #handle {
+            left: -1vw;
+        }
+
+        #date {
+            left: 29vw;
+        }
+    }
+
     @media (prefers-color-scheme: dark) {
         :global(body:not(.light)) h4, p {
             color: hsl(0, 0%, 100%);
