@@ -37,6 +37,10 @@
         cursor: pointer;
     }
 
+    button:hover {
+        background-color: hsl(212, 100%, 69%);
+    }
+
     input {
         border: none;
         font-size: 12px;
