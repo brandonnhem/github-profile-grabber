@@ -34,6 +34,11 @@
         width: 84px;
         border: none;
         font-weight: 700;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: hsl(212, 100%, 69%);
     }
 
     input {
@@ -41,6 +46,8 @@
         font-size: 12px;
         width: 50vw;
         margin-left: 1vw;
+        caret-color: hsl(212, 100%, 50%);
+        cursor: pointer;
     }
 
     input:focus {
