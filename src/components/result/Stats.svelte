@@ -26,7 +26,7 @@
         align-items: center;
         justify-content: space-evenly;
         background-color: hsl(227, 100%, 98%);
-        border-radius: 15px;
+        border-radius: 0.9375rem;
     }
 
     .stats-col {
@@ -37,7 +37,7 @@
     }
 
     p {
-        font-size: 11px;
+        font-size: 0.6875rem;
         color:hsl(217, 35%, 45%);
         padding-top: 1rem;
     }
@@ -53,11 +53,11 @@
 
     @media only screen and (min-width: 768px) {
         p {
-            font-size: 13px;
+            font-size: 0.8125rem;
         }
 
         h3 {
-            font-size: 22px;
+            font-size: 1.375rem;
         }
 
         .stats {

@@ -58,23 +58,23 @@
 <style>
     .error-message {
         color: red;
-        font-size: 12px;
+        font-size: 0.75rem;
         width: max-content;
         display: none;
     }
 
     .search-bar {
         background-color: white;
-        border-radius: 15px;
-        height: 60px;
+        border-radius: 0.9375rem;
+        height: 3.75rem;
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 0 3vw;
         justify-content: space-around;
-        -webkit-box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
-        -moz-box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
-        box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+        -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.25);
+        -moz-box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.25);
+        box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.25);
     }
 
     .sub-search {
@@ -85,9 +85,9 @@
     button {
         background-color: hsl(212, 100%, 50%);
         color: white;
-        border-radius: 10px;
-        height: 46px;
-        width: 84px;
+        border-radius: 0.625rem;
+        height: 2.875rem;
+        width: 5.25rem;
         border: none;
         font-weight: 700;
         cursor: pointer;
@@ -99,7 +99,7 @@
 
     input {
         border: none;
-        font-size: 12px;
+        font-size: 0.75rem;
         width: 50vw;
         margin-left: 1vw;
         caret-color: hsl(212, 100%, 50%);
@@ -117,13 +117,13 @@
         }
 
         button {
-            font-size: 16px;
-            width: 106px;
-            height: 50px;
+            font-size: 1rem;
+            width: 6.625rem;
+            height: 3.125rem;
         }
 
         input {
-            font-size: 20px;
+            font-size: 1.25rem;
         }
     }
 

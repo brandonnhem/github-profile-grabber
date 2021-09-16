@@ -49,12 +49,12 @@
 <style>
     .result {
         background-color: white;
-        border-radius: 15px;
+        border-radius: 0.9375rem;
         padding: 1.5rem;
         margin-top: 3vh;
-        -webkit-box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
-        -moz-box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
-        box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+        -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.25);
+        -moz-box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.25);
+        box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.25);
     }
 
     @media only screen and (min-width: 768px) {
