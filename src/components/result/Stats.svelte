@@ -5,7 +5,7 @@
 </script>
 
 <div class="stats">
-    <div class="stats-col">
+    <div class="stats-col" id="repo">
         <p>Repos</p>
         <h3>{public_repos}</h3>
     </div>
@@ -26,7 +26,7 @@
         align-items: center;
         justify-content: space-evenly;
         background-color: hsl(227, 100%, 98%);
-        border-radius: 15px;
+        border-radius: 0.9375rem;
     }
 
     .stats-col {
@@ -37,7 +37,7 @@
     }
 
     p {
-        font-size: 11px;
+        font-size: 0.6875rem;
         color:hsl(217, 35%, 45%);
         padding-top: 1rem;
     }
@@ -53,25 +53,46 @@
 
     @media only screen and (min-width: 768px) {
         p {
-            font-size: 13px;
+            font-size: 0.8125rem;
         }
 
         h3 {
-            font-size: 22px;
+            font-size: 1.375rem;
         }
 
         .stats {
-            justify-content: space-around;
+            justify-content: flex-start;
         }
 
         .stats-col {
             align-items: flex-start;
+            margin-right: 9rem;
+        }
+
+        #repo {
+            margin-left: 1.25rem;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .stats {
+            justify-content: flex-start;
+            margin-left: 16.5vw;
+        }
+
+        .stats-col {
+            align-items: flex-start;
+            margin-right: 14vw;
         }
     }
     
     @media only screen and (min-width: 1440px) {
         .stats {
             margin-left: 11vw;
+        }
+
+        .stats-col {
+            margin-right: 8vw;
         }
     }
 

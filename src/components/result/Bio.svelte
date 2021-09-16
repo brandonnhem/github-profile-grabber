@@ -40,8 +40,8 @@
     }
 
     img {
-        width: 70px;
-        height: 70px;
+        width: 4.375rem;
+        height: 4.375rem;
         border-radius: 50%;
     }
 
@@ -69,17 +69,23 @@
 
     @media only screen and (min-width: 768px) {
         img {
-            height: 117px;
-            width: 117px;
+            height: 7.3125rem;
+            width: 7.3125rem;
         }
 
         h3 {
-            font-size: 26px;
+            font-size: 1.625rem;
             margin-bottom: 1vh;
         }
 
         h4 {
-            font-size: 16px;
+            font-size: 1rem;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        p {
+            margin-left: 16.5vw;
         }
     }
     
