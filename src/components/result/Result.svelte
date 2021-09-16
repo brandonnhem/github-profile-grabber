@@ -2,30 +2,48 @@
     import Bio from './Bio.svelte';
     import Stats from './Stats.svelte';
     import Links from './Links.svelte';
-    import { Octokit } from "@octokit/rest";
 
-    const octokit = new Octokit({
-        auth: API_KEY,
-        userAgent: 'devfinder v.1',
+    import { userData } from '../stores';
+    import { onDestroy, onMount } from 'svelte';
+
+    let userData_values;
+    let bioJSON, statsJSON, linksJSON = {};
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const unsubscribe = userData.subscribe(value => {
+        userData_values = value;
+        let dateObj = new Date(userData_values.created_at);
+        let day = dateObj.getUTCDate();
+        let month = dateObj.getMonth();
+        let year = dateObj.getUTCFullYear();
+        let newDate = `${day} ${monthNames[month]} ${year}`;
+        bioJSON = {'avatar_url':userData_values.avatar_url, 'bio':userData_values.bio, 'created_at':newDate, 'login':userData_values.login, 'name':userData_values.name};
+        statsJSON = {'public_repos':userData_values.public_repos, 'followers':userData_values.followers, 'following':userData_values.following};
+        linksJSON = {'website':userData_values.blog, 'company':userData_values.company, 'location':userData_values.location, 'twitter_username':userData_values.twitter_username};
     });
 
+	onDestroy(unsubscribe);
 
-    // TODO: create GET method
+    let response = {};
+    onMount(async () => {
+        let promise = await fetch('https://api.github.com/users/octocat');
+        response = await promise.json();
+        let dateObj = new Date(response.created_at);
+        let day = dateObj.getUTCDate();
+        let month = dateObj.getMonth();
+        let year = dateObj.getUTCFullYear();
+        let newDate = `${day} ${monthNames[month]} ${year}`;
+        bioJSON = {'avatar_url':response.avatar_url, 'bio':response.bio, 'created_at':newDate, 'login':response.login, 'name':response.name};
+        statsJSON = {'public_repos':response.public_repos, 'followers':response.followers, 'following':response.following};
+        linksJSON = {'website':response.blog, 'company':response.company, 'location':response.location, 'twitter_username':response.twitter_username};
+    });
 
-    // myAsyncMethod();
-
-    // async function myAsyncMethod() {
-    //     const result = await octokit.request('GET /users/{username}', {
-    //         username: 'brandonnhem'
-    //     });
-    //     console.log(result);
-    // }
 </script>
 
 <section class="result">
-    <Bio />
-    <Stats />
-    <Links />
+    <Bio {...bioJSON}/>
+    <Stats {...statsJSON}/>
+    <Links {...linksJSON}/>
 </section>
 
 <style>
