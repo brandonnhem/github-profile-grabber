@@ -6,8 +6,9 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshot)
   - [Links](#links)
+- [How to use](#instructions)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -15,8 +16,6 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -31,22 +30,25 @@ Users should be able to:
 - Switch between light and dark themes
 - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.jpg)
+![Mobile Dark](./images/mobile_dark.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+![Mobile Light](./images/mobile_light.png)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+![Desktop Dark](./images/desktop_dark.png)
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+![Desktop Light](./images/desktop_light.png)
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/brandonnhem/github-profile-grabber)
+- Live Site URL: [Vercel](https://github-grabber.vercel.app)
+
+## Instructions
+
+On any web browser, visit the [live site url](https://github-grabber.vercel.app). In the search bar, type any valid GitHub username and press enter or search. If there are no results, an error message will appear in red in the search bar.
 
 ## My process
 
@@ -57,59 +59,61 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Svelte](https://svelte.dev/) - JS Frontend Framework
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+**Figma**
 
-To see how you can add code snippets, see below:
+I learned a great deal in this project. This is my first Frontend Mentor project where I am given a Figma file. The Figma file certainly helped me plan ahead on which part of the project to start and how to style each component. I learned how to use Figma as well, it is a very helpful tool for developers in constructing the design. I unfortunately learned late in to the project that you are able to get pixel perfection through looking at the inspect tab as well as setting up elements with exact pixel units.
+
+
+**Svelte**
+
+This is my second Svelte project; I am amazed at how simple and intuitive it is to use it. For a small project like this, I think it was not overkill. React brings HTML to JavaScript whereas Svelte brings JavaScript to HTML. Here's a snippet of code where I was able to fade in the theme toggle.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+{#if currentTheme === THEMES.LIGHT}
+  <div id="light-theme-toggle" transition:fade="{{ duration: 800 }}">
+    <h3>DARK</h3>
+    <svg></svg>
+  </div>
+{:else}
+  <div id="dark-theme-toggle" transition:fade="{{ duration: 800 }}">
+    <h3>LIGHT</h3>
+    <svg></svg>
+  </div>
+{/if}
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+JavaScript baked into HTML?? Crazy cool.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+**CSS Grids**
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I only recently discovered CSS Grids and it has certainly helped me in this project. I wanted to get the links to display in a different order when the viewport has increased, so I used CSS Grids, it made things so much easier than my old _hackier_ methods where I would use conditional statements or flatout `absolute: position`. Yikes. I'm getting better I promise.
+
+**Flexbox**
+
+I have gotten more familiar with flexbox and am happy that I've been using it more. Gone are the days of positioning things absolutely, that was a headache before. It also certainly helps when viewing the website with the dev tools that you can see live changes to a flex box by using the built in tools for inspecting it.
+
+**Mobile First**
+
+I am certainly getting better at mobile first designs. At first, I was confused at which breakpoints I should be targetting but I figured it out especially during this project.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In the future, I will plan out a project better in terms of styling. I was constantly rewriting the same colors over and over again. At the end of the project, I only realized that I could create variables for my styles. That would have saved me a good chunk of time. I also plan to use less of pixel units and more of rem units. I hear that it's better for accessibility reasons when increasing the size of your fonts on a system level.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Lastly, I very much would like to have started this project in TypeScript. I have seen the benefits and I think I'm ready to make the switch.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Dark/Light Theme](https://dev.to/lenaschnedlitz/create-a-simple-dark-mode-toggle-with-svelte-4b3g) - This helped me switch between light and dark mode. Although it is geared towards Svelte, it is purely JS at the end of the day. This also helped me learn a bit more about local storage.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- GitHub - [GitHub](https://github.com/brandonnhem)
+- Frontend Mentor - [@brandonnhem](https://www.frontendmentor.io/profile/brandonnhem)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Special thanks to [Leon Michalak](https://github.com/NinjaInShade) for posting his website. I was inspired by how his theme transitioned smoothly. I changed my website directly because of how neat his looked as it went from dark to light. My version could be a _little_ better.
