@@ -1,15 +1,31 @@
+<script>
+    export let avatar_url;
+    export let bio;
+    export let created_at;
+    export let login;
+    export let name;
+</script>
+
 <div class="bio">
     <div class="bio-header">
         <div class="profile-pic">
-            <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="profile">
+            <img src="{avatar_url}" alt="profile">
         </div>
         <div class="profile-info">
-            <h3 id="username">USERNAME</h3>
-            <h4 id="handle"><a href="/">@HANDLE</a></h4>
-            <h4 id="date">Joined 9 Sep 2021</h4>
+            {#if (name === null)}
+                <h3 id="username">{login}</h3>
+            {:else}
+                <h3 id="username">{name}</h3>
+            {/if}
+            <h4 id="handle"><a href="https://github.com/{login}">@{login}</a></h4>
+            <h4 id="date">Joined {created_at}</h4>
         </div>
     </div>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, facere magni maiores totam, ea repellat eveniet, corrupti tempora.</p>
+    {#if (bio === null)}
+        <p>This profile has no bio.</p>
+    {:else}
+        <p>{bio}</p>
+    {/if}
 </div>
 
 <style>
@@ -76,6 +92,7 @@
             position: absolute;
             top: -5vh;
             left: -2vw;
+            width: max-content;
         }
 
         #handle {
