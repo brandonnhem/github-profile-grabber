@@ -1,3 +1,11 @@
+.dark {
+    transition: all 0.25s ease-in-out;
+}
+
+.light {
+    transition: all 0.25s ease-in-out;
+}
+
 h1 {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
