@@ -136,6 +136,12 @@
                 "website company"; 
         }
     }
+
+    @media only screen and (min-width: 1024px) {
+        .links {
+            margin-left: 16.5vw;
+        }
+    }
     
     @media only screen and (min-width: 1440px) {
         .links {

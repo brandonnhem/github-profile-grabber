@@ -82,6 +82,12 @@
             font-size: 1rem;
         }
     }
+
+    @media only screen and (min-width: 1024px) {
+        p {
+            margin-left: 16.5vw;
+        }
+    }
     
     @media only screen and (min-width: 1440px) {
         .profile-info {
