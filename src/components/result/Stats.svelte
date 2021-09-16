@@ -1,15 +1,21 @@
+<script>
+    export let public_repos;
+    export let followers;
+    export let following;
+</script>
+
 <div class="stats">
     <div class="stats-col">
         <p>Repos</p>
-        <h3>8</h3>
+        <h3>{public_repos}</h3>
     </div>
     <div class="stats-col">
         <p>Followers</p>
-        <h3>3938</h3>
+        <h3>{followers}</h3>
     </div>
     <div class="stats-col">
         <p>Following</p>
-        <h3>9</h3>
+        <h3>{following}</h3>
     </div>
 </div>
 

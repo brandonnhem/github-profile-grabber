@@ -1,12 +1,68 @@
+<script>
+    import { userData } from './stores.js';
+    let username;
+    let userObject;
+    function submit(e) {
+        e.preventDefault();
+        fetchUser(username);
+    }
+
+    async function fetchUser(user) {
+        try {
+            let promise = await fetch("https://api.github.com/users/" + user);
+            
+            if(promise.ok) {
+                userObject = await promise.json();
+                userData.update(() => userObject);
+            } else {
+                document.getElementById('error').style.display = 'block';
+                if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1024) {
+                    document.getElementById('text-box').style.width = '45vw';
+                } else if (document.documentElement.clientWidth >= 1024 && document.documentElement.clientWidth < 1440) {
+                    document.getElementById('text-box').style.width = '55vw';
+                } else if (document.documentElement.clientWidth >= 1440 && document.documentElement.clientWidth < 1600) {
+                    document.getElementById('text-box').style.width = '32vw';
+                } else if (document.documentElement.clientWidth >= 1600) {
+                    document.getElementById('text-box').style.width = '40vw';
+                } else {
+                    document.getElementById('text-box').style.width = '25vw';
+                }
+                document.getElementById('search-btn').style.marginLeft = '2vw';
+            }
+        } catch (err) {
+            return console.log(err);
+        }
+    }
+
+    function reset() {
+        if (document.getElementById('error').style.display === 'block') {
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('text-box').style.width = '50vw';
+            document.getElementById('search-btn').style.marginLeft = '0';
+            if (username !== '') {
+                username = '';
+            }
+        }
+    }
+</script>
+
 <form class="search-bar" action="GET">
-    <div class="sub-search">
+    <div class="sub-search" on:click="{reset}">
         <svg height="24" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M10.609 0c5.85 0 10.608 4.746 10.608 10.58 0 2.609-.952 5-2.527 6.847l5.112 5.087a.87.87 0 01-1.227 1.233l-5.118-5.093a10.58 10.58 0 01-6.848 2.505C4.759 21.16 0 16.413 0 10.58 0 4.747 4.76 0 10.609 0zm0 1.74c-4.891 0-8.87 3.965-8.87 8.84 0 4.874 3.979 8.84 8.87 8.84a8.855 8.855 0 006.213-2.537l.04-.047a.881.881 0 01.058-.053 8.786 8.786 0 002.558-6.203c0-4.875-3.979-8.84-8.87-8.84z" fill="#0079ff"/></svg>
-        <input type="text" placeholder="Search GitHub username...">
+        <input type="text" placeholder="Search GitHub username..." bind:value="{username}" id="text-box">
+        <div class="error-message" id="error">No results</div>
     </div>
-    <button type="submit">Search</button>
+    <button type="submit" on:click="{submit}" id="search-btn">Search</button>
 </form>
 
 <style>
+    .error-message {
+        color: red;
+        font-size: 12px;
+        width: max-content;
+        display: none;
+    }
+
     .search-bar {
         background-color: white;
         border-radius: 15px;
@@ -73,7 +129,7 @@
 
     @media only screen and (min-width: 1440px) {
         input {
-            width: 35vw;
+            width: 33vw;
         }
     }
 
